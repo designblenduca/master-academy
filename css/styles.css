@@ -851,18 +851,28 @@ img { max-width: 100%; height: auto; display: block; }
    ============================================================ */
 .video-teaser { padding: 6rem 0; }
 
-.video-teaser-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
+.video-teaser-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3rem;
 }
 
 .video-teaser-desc {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.85;
     margin-top: 1rem;
+}
+
+.video-placeholder-full {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-teaser-cta {
+    text-align: center;
+    margin-top: 2.5rem;
 }
 
 .video-placeholder { width: 100%; }
@@ -1052,17 +1062,23 @@ img { max-width: 100%; height: auto; display: block; }
     line-height: 1.7;
     position: relative;
     margin-bottom: 0.5rem;
+    margin-top: 3rem;    /* espaço para o quote-mark que fica acima */
 }
-.about-quote::before {
-    content: '\201C';
+.quote-mark {
     position: absolute;
-    top: -0.5rem;
-    left: 1.5rem;
-    font-size: 5rem;
+    top: -2.2rem;
+    left: 2rem;
+    font-size: 5.5rem;
     font-family: Georgia, serif;
     color: var(--green);
-    opacity: 0.4;
+    opacity: 0.55;
     line-height: 1;
+    font-style: normal;
+    pointer-events: none;
+}
+.quote-text {
+    margin: 0 0 0 0;
+    line-height: inherit;
 }
 .about-quote cite {
     display: block;
@@ -1081,7 +1097,6 @@ img { max-width: 100%; height: auto; display: block; }
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
     .about-photo-col { position: static; }
     .about-photo-placeholder { aspect-ratio: 4/3; }
-    .video-teaser-inner { grid-template-columns: 1fr; gap: 3rem; }
 }
 
 @media (max-width: 768px) {
@@ -1119,10 +1134,11 @@ img { max-width: 100%; height: auto; display: block; }
     .about-photo-col { position: static; }
     .about-photo-placeholder { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto 1.5rem; }
     .about-highlight-card { grid-template-columns: 1fr 1fr; }
-    .about-quote { padding: 1.5rem; font-size: 0.95rem; }
+    .about-quote { padding: 1.5rem; font-size: 0.95rem; margin-top: 2.5rem; }
+    .quote-mark { font-size: 4rem; top: -1.8rem; }
 
     /* Video teaser mobile */
-    .video-teaser-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .video-placeholder-full { max-width: 100%; }
     .video-teaser { padding: 4rem 0; }
 }
 
