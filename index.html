@@ -79,23 +79,24 @@
     ══════════════════════════════════════ -->
     <section class="section video-teaser bg-dark">
         <div class="container">
-            <div class="video-teaser-header reveal">
-                <p class="section-eyebrow light centered">Ouça quem vive isso no dia a dia</p>
-                <h2 class="section-title text-white">O Danilo explica <span style="color:var(--green)">em 3 minutos</span></h2>
-                <p class="video-teaser-desc text-center">O que muda para o produtor rural com a Reforma Tributária, quais os maiores erros que os produtores cometem e como a informação certa pode economizar dezenas de milhares de reais por safra.</p>
-            </div>
-            <!-- PLACEHOLDER: Substituir pelo embed do vídeo/podcast do Danilo -->
-            <div class="video-placeholder-full reveal">
-                <div class="video-placeholder-box">
-                    <div class="video-play-icon">
-                        <i data-lucide="play-circle"></i>
-                    </div>
-                    <p class="video-placeholder-label">Vídeo / Podcast<br><strong>em breve aqui</strong></p>
-                    <p class="video-placeholder-hint">Substitua este bloco pelo embed do YouTube ou vídeo de vendas</p>
+            <div class="video-teaser-split">
+
+                <!-- Coluna esquerda: texto + CTA -->
+                <div class="video-teaser-left reveal-left">
+                    <p class="section-eyebrow light">Ouça quem vive isso no dia a dia</p>
+                    <h2 class="section-title text-white text-left">O Danilo explica<br><span style="color:var(--green)">em 3 minutos</span></h2>
+                    <p class="video-teaser-desc">O que muda para o produtor rural<br>com a Reforma Tributária, quais os erros<br>que podem custar dezenas de milhares na sua safra.</p>
+                    <a href="#oferta" class="cta-button" style="font-size:1.1rem;padding:0.85rem 2.2rem;margin-top:1rem;">QUERO APRENDER MAIS</a>
                 </div>
-            </div>
-            <div class="video-teaser-cta reveal">
-                <a href="#oferta" class="cta-button" style="font-size:1.2rem;padding:0.9rem 2.4rem;">QUERO APRENDER MAIS</a>
+
+                <!-- Coluna direita: vídeo vertical 9:16 -->
+                <div class="video-vertical-wrapper reveal-right">
+                    <video controls class="video-vertical">
+                        <source src="assets/o danilo explica.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+
             </div>
         </div>
     </section>
@@ -266,12 +267,7 @@
 
                 <!-- Foto do Danilo -->
                 <div class="about-photo-col reveal-left">
-                    <!-- PLACEHOLDER: Substituir pela foto real do Danilo -->
-                    <div class="about-photo-placeholder">
-                        <i data-lucide="user-circle-2"></i>
-                        <span>Foto do Prof. Danilo<br><em>(substitua pelo arquivo real)</em></span>
-                    </div>
-                    <!-- Quando tiver a foto, usar: <img src="assets/danilo-polacinski.jpg" alt="Prof. Danilo Polacinski"> -->
+                    <img src="assets/prof danilo.jpeg" alt="Prof. Danilo Polacinski" class="about-photo-real" style="width:100%; border-radius:var(--radius-md); box-shadow: 0 16px 40px rgba(0,0,0,0.2);">
                     <div class="about-highlight-card">
                         <div class="about-stat">
                             <strong>+15 anos</strong>
