@@ -334,6 +334,83 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .badge i { width: 14px; height: 14px; color: var(--green); }
 
+/* Badge variants — Fisco & Economy */
+.badge-threat {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.4);
+    color: #fca5a5;
+}
+.badge-threat i { color: #f87171; }
+
+.badge-economy {
+    background: rgba(55, 199, 8, 0.15);
+    border-color: rgba(55, 199, 8, 0.4);
+    color: rgba(255,255,255,0.9);
+}
+.badge-economy i { color: var(--green); }
+
+/* Alert badge — "Atenção: Receita no campo" */
+.alert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, rgba(220,38,38,0.25), rgba(180,20,20,0.15));
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    padding: 0.55rem 1.4rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #fca5a5;
+    margin-bottom: 1.4rem;
+    backdrop-filter: blur(10px);
+    animation: alertPulse 2.8s ease-in-out infinite;
+}
+.alert-icon {
+    width: 15px;
+    height: 15px;
+    color: #f87171;
+    flex-shrink: 0;
+}
+@keyframes alertPulse {
+    0%, 100% { border-color: rgba(239,68,68,0.5); box-shadow: 0 0 0 0 rgba(239,68,68,0.3); }
+    50%       { border-color: rgba(239,68,68,0.9); box-shadow: 0 0 14px rgba(239,68,68,0.35); }
+}
+
+/* Urgency Timer */
+.urgency-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius-pill);
+    padding: 0.6rem 1.4rem;
+    backdrop-filter: blur(10px);
+}
+.urgency-icon {
+    width: 16px;
+    height: 16px;
+    color: #fbbf24;
+    flex-shrink: 0;
+}
+.urgency-text {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+.urgency-text strong {
+    color: #fbbf24;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+}
+
 /* ============================================================
    SEÇÃO 2 — DORES (IDENTIFICATION)
    ============================================================ */
@@ -1140,5 +1217,18 @@ img { max-width: 100%; height: auto; display: block; }
     /* Video teaser mobile */
     .video-placeholder-full { max-width: 100%; }
     .video-teaser { padding: 4rem 0; }
-}
 
+    /* Alert badge & urgency timer mobile */
+    .alert-badge {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        padding: 0.45rem 1rem;
+    }
+    .urgency-timer {
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .urgency-text { justify-content: center; font-size: 0.78rem; }
+}

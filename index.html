@@ -39,12 +39,25 @@
 
         <!-- Conteúdo -->
         <div class="container hero-content">
-            <p class="hero-eyebrow">Prof. Danilo Polacinski · Especialista em Tributação Rural</p>
-            <h1 class="headline">A Receita Federal<br><span class="highlight">está chegando ao Campo.</span></h1>
-            <p class="sub-headline">Saiba exatamente o que pagar, o que <strong>não pagar</strong> e como proteger sua propriedade — sem precisar ter estudado contabilidade na vida.</p>
+            <div class="alert-badge reveal">
+                <i data-lucide="siren" class="alert-icon"></i>
+                <span>ATENÇÃO: A RECEITA FEDERAL JÁ ESTÁ NO CAMPO</span>
+            </div>
 
-            <div class="cta-wrapper">
-                <a href="https://www.asaas.com/c/6ygeqteukb7ctpbc" target="_blank" class="cta-button">QUERO ME PROTEGER AGORA</a>
+            <h1 class="headline reveal">O único programa com<br><span class="highlight">estratégias reais</span> para o produtor rural.</h1>
+            <p class="sub-headline reveal">Não vire presa fácil do fisco. Descubra como blindar seu patrimônio e <strong>garantir uma economia financeira gigantesca</strong> — mantendo o dinheiro no seu bolso, sem complicação.</p>
+
+            <div class="cta-wrapper reveal">
+                <a href="https://www.asaas.com/c/6ygeqteukb7ctpbc" target="_blank" class="cta-button pulse">QUERO ECONOMIZAR E ME PROTEGER</a>
+                
+                <div class="urgency-timer">
+                    <i data-lucide="timer" class="urgency-icon"></i>
+                    <div class="urgency-text">
+                        Ação da Receita se intensifica em:
+                        <strong id="countdown-timer">00h 00m 00s</strong>
+                    </div>
+                </div>
+                
                 <p class="cta-sub">
                     <i data-lucide="shield-check" class="cta-sub-icon"></i>
                     Garantia incondicional de 7 dias — risco zero
@@ -52,10 +65,10 @@
             </div>
 
             <!-- Trust badges -->
-            <div class="hero-badges">
-                <span class="badge"><i data-lucide="play-circle"></i> 40+ aulas práticas</span>
-                <span class="badge"><i data-lucide="trending-up"></i> Economia real no campo</span>
-                <span class="badge"><i data-lucide="shield-check"></i> Sem juridiquês</span>
+            <div class="hero-badges reveal">
+                <span class="badge badge-threat"><i data-lucide="landmark"></i> Proteção contra a Receita</span>
+                <span class="badge badge-economy"><i data-lucide="piggy-bank"></i> Economia Financeira Direta</span>
+                <span class="badge"><i data-lucide="shield-alert"></i> Evite Multas Destrutivas</span>
             </div>
         </div>
     </header>
@@ -145,7 +158,7 @@
         <div class="container">
             <p class="section-eyebrow light centered">Conteúdo completo e prático</p>
             <h2 class="section-title text-white">O que você vai receber</h2>
-            <p class="section-lead text-center">O único programa em linguagem do campo, sem juridiquês, com estratégias reais para o produtor rural.</p>
+            <p class="section-lead text-center">O mapa definitivo em linguagem do campo, sem juridiquês, focado 100% na segurança patrimonial e na economia financeira do produtor.</p>
 
             <!-- 4 benefícios principais -->
             <div class="features-grid">
@@ -421,6 +434,40 @@
         }, { threshold: 0.08 });
 
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+        // Urgency Timer Countdown
+        function initCountdown() {
+            const timerEl = document.getElementById('countdown-timer');
+            if (!timerEl) return;
+            
+            // Set for end of current day to create daily urgency
+            let targetDate = new Date();
+            targetDate.setHours(23, 59, 59, 0);
+            
+            if (new Date().getHours() >= 23) {
+                targetDate.setDate(targetDate.getDate() + 1);
+            }
+
+            function update() {
+                const now = new Date();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    timerEl.innerHTML = "00h 00m 00s";
+                    return;
+                }
+
+                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const m = Math.floor((diff / 1000 / 60) % 60);
+                const s = Math.floor((diff / 1000) % 60);
+
+                timerEl.innerHTML = `${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m ${String(s).padStart(2, '0')}s`;
+            }
+            
+            update();
+            setInterval(update, 1000);
+        }
+        initCountdown();
     </script>
 </body>
 </html>
