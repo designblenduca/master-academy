@@ -1165,23 +1165,23 @@ img { max-width: 100%; height: auto; display: block; }
 .about-quote {
     background: linear-gradient(135deg, var(--navy), var(--navy-mid));
     color: var(--white);
-    padding: 2rem 2.5rem;
+    padding: 3.5rem 2.5rem 2rem; /* Increased top padding for quote mark */
     border-radius: var(--radius-md);
     font-size: 1.05rem;
     font-style: italic;
     line-height: 1.7;
     position: relative;
     margin-bottom: 0.5rem;
-    margin-top: 3rem;    /* espaço para o quote-mark que fica acima */
+    margin-top: 1.5rem; /* Reduced margin since quote is inside */
 }
 .quote-mark {
     position: absolute;
-    top: -2.2rem;
+    top: 1rem; /* Moved inside the box */
     left: 2rem;
-    font-size: 5.5rem;
+    font-size: 4.5rem; /* Slightly smaller to fit better inside */
     font-family: Georgia, serif;
     color: var(--green);
-    opacity: 0.55;
+    opacity: 0.4; /* Slightly more subtle inside */
     line-height: 1;
     font-style: normal;
     pointer-events: none;
@@ -1244,8 +1244,8 @@ img { max-width: 100%; height: auto; display: block; }
     .about-photo-col { position: static; }
     .about-photo-placeholder { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto 1.5rem; }
     .about-highlight-card { grid-template-columns: 1fr 1fr; }
-    .about-quote { padding: 1.5rem; font-size: 0.95rem; margin-top: 2.5rem; }
-    .quote-mark { font-size: 4rem; top: -1.8rem; }
+    .about-quote { padding: 3rem 1.5rem 1.5rem; font-size: 0.95rem; margin-top: 1.5rem; }
+    .quote-mark { font-size: 3.5rem; top: 0.8rem; }
 
     /* Video teaser mobile — empilha em coluna única */
     .video-teaser { padding: 4rem 0; }
